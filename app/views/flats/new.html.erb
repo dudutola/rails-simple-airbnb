@@ -1,0 +1,17 @@
+<div class="card bg-light p-4 w-50 mx-auto">
+  <h1>Add a new Flat</h1>
+
+  <%= simple_form_for(@flat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :number_of_guests %>
+    <%= f.input :price_per_night %>
+
+    <div class="d-flex gap-2">
+      <%= f.submit "Create Flat", class: "btn btn-primary" %>
+
+      <%= link_to "Cancel", flats_path, class: "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>
