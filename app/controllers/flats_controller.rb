@@ -1,5 +1,5 @@
 class FlatsController < ApplicationController
-  before_action :set_flat, only: [ :show, :edit, :update ]
+  before_action :set_flat, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @flats = Flat.all
@@ -29,6 +29,11 @@ class FlatsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @flat.destroy
+    redirect_to @flat, status: :see_other
   end
 
   private
